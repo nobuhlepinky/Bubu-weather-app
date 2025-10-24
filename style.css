@@ -29,6 +29,8 @@ body {
   padding: 15px;
   border-radius: 6px;
   width: 20%;
+  background: white;
+  cursor: pointer;
 }
 
 h1 {
@@ -41,5 +43,10 @@ h1 {
 p {
   text-align: center;
   color: black;
-  font-size: 18px;
+  font-size: 15px;
+}
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: black;
 }
