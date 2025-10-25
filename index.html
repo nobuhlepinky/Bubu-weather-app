@@ -9,19 +9,20 @@
   <body>
     <div class="container">
       <header>
-        <form class="search">
+        <form class="search" id="search-form">
           <input
             type="search"
             placeholder="Search for a city"
             required
             class="search-input"
+            id="city-input"
           />
           <input type="submit" value="Search" class="search-button" />
         </form>
       </header>
       <main>
         <h1>⛅ 15°C</h1>
-        <h1>Cape Town</h1>
+        <h1 id="city">Cape Town</h1>
         <p>
           Friday, 6:54 | Partly cloudy
           <br />
@@ -44,5 +45,6 @@
         >
       </footer>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
