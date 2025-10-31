@@ -68,8 +68,7 @@ p {
 }
 .weather-forecast-icon {
   text-align: center;
-  font-size: 24px;
-  color: black;
+  width: 70%;
 }
 .weather-forecast-temperatures {
   text-align: center;
