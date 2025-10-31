@@ -15,6 +15,8 @@ function displayTemperature(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windSpeedElement.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -53,7 +55,14 @@ function handleSubmit(event) {
   searchCity(cityInputElement.value);
 }
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "3daotdb8ad0fef1b452b37bd25c25547";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
@@ -84,5 +93,3 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSubmit);
 
 searchCity("Cape Town");
-
-displayForecast();
