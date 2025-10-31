@@ -64,10 +64,10 @@ function getForecast(city) {
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
-  let day = date.getDay();
+
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-  return days[day];
+  return days[date.getDay()];
 }
 
 function displayForecast(response) {
@@ -76,7 +76,7 @@ function displayForecast(response) {
   let forecastHtml = "";
 
   response.data.daily.forEach(function (day, index) {
-    if (index < 5) {
+    if (index > 0 && index < 7) {
       forecastHtml =
         forecastHtml +
         `<div class="weather-forecast-day">
